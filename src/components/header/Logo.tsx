@@ -1,6 +1,4 @@
-import { Box, Group, Text, ThemeIcon } from "@mantine/core";
-
-import { IconBeerFilled } from "@tabler/icons-react";
+import { Box, Group, Image, Text } from "@mantine/core";
 
 interface Props {
 	onClick?: () => void;
@@ -9,9 +7,7 @@ interface Props {
 const Logo = ({ onClick }: Props) => {
 	return (
 		<Group sx={{ cursor: "pointer", userSelect: "none" }} align="center" spacing="xs" noWrap onClick={onClick}>
-			<ThemeIcon size={36} variant="gradient">
-				<IconBeerFilled size={24} stroke={1.5} />
-			</ThemeIcon>
+			<Image src="/logo.png" alt="Logo" width={36} radius="xl" />
 			<Box>
 				<Text fw={600} lh={1.32}>
 					Am I Drunk?
