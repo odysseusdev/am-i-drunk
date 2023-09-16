@@ -26,7 +26,7 @@ const Footer = () => {
 				height={bac ? (opened ? "fit-content" : HEIGHT_BAC) : HEIGHT_NOBAC}
 				zIndex={opened ? 201 : undefined}
 			>
-				<Container size="xl">
+				<Container size="xs">
 					{bac ? (
 						<>
 							<Center

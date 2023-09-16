@@ -8,7 +8,7 @@ const HEIGHT: number = 64;
 const Header = () => {
 	return (
 		<MantineHeader height={HEIGHT}>
-			<Container size="xl">
+			<Container size="xs">
 				<Group h={HEIGHT} position="apart" align="center">
 					<Logo />
 					<Group display="none">

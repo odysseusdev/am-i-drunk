@@ -25,7 +25,7 @@ const App = () => {
 			>
 				<Notifications />
 				<AppShell header={<Header />} footer={<Footer />}>
-					<Container size="xl" p="xs" mx="auto">
+					<Container size="xs" p="xs" mx="auto">
 						<Stack spacing="lg">
 							<Summary />
 							<Divider />

@@ -5,7 +5,6 @@ import { Drink } from "../../../lib/types";
 import DrinksItem from "./DrinksItem";
 import EditDrinkModal from "./edit-drink/EditDrinkModal";
 import { IconPlus } from "@tabler/icons-react";
-import NoResults from "./NoResults";
 import useStore from "../../../lib/stores/store";
 
 const DrinksForm = () => {
@@ -39,14 +38,13 @@ const DrinksForm = () => {
 				A higher quantity of drinks or the consumption of stronger drinks will result in more alcohol for your body to
 				process.
 			</Text>
-			{drinks.length === 0 && <NoResults />}
 			{[...drinks]
 				.sort((a, b) => a.name.localeCompare(b.name))
 				.map((drink) => (
 					<DrinksItem key={drink.id} drink={drink} onEdit={handleEditDrink} onRemove={handleRemoveDrink} />
 				))}
-			<Button variant="light" fullWidth leftIcon={<IconPlus stroke={1.5} />} onClick={() => handleEditDrink()}>
-				Add new drink
+			<Button variant="light" leftIcon={<IconPlus stroke={1.5} />} onClick={() => handleEditDrink()}>
+				Add drink
 			</Button>
 		</>
 	);
