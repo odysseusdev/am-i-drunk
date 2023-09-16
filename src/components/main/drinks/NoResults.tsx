@@ -1,7 +1,6 @@
 import { Box, Group, Text, ThemeIcon } from "@mantine/core";
 
 import { IconBeerOff } from "@tabler/icons-react";
-import React from "react";
 
 const NoResults = () => {
 	return (

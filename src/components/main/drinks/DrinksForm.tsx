@@ -1,4 +1,4 @@
-import { Button, Center, Stack, Text, Tooltip, useMantineTheme } from "@mantine/core";
+import { Button, Text } from "@mantine/core";
 import { openConfirmModal, openModal } from "@mantine/modals";
 
 import { Drink } from "../../../lib/types";

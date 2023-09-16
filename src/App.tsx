@@ -1,4 +1,4 @@
-import { AppShell, Container, Divider, MantineProvider, Stack, Text } from "@mantine/core";
+import { AppShell, Container, Divider, MantineProvider, Stack } from "@mantine/core";
 
 import DrinksForm from "./components/main/drinks/DrinksForm";
 import Footer from "./components/footer/Footer";
