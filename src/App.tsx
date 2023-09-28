@@ -1,16 +1,18 @@
-import { AppShell, Container, Divider, MantineProvider, Stack } from "@mantine/core";
+import { AppShell, Container, Divider, Group, MantineProvider, Stack } from "@mantine/core";
 
-import DrinksForm from "./components/main/drinks/DrinksForm";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+import Footer from "./components/footer";
+import Forms from "./components/forms";
+import Header from "./components/header";
 import { ModalsProvider } from "@mantine/modals";
 import { Notifications } from "@mantine/notifications";
-import Summary from "./components/main/Summary";
-import TimesForm from "./components/main/time/TimesForm";
-import UserForm from "./components/main/user/UserForm";
+import Results from "./components/results";
+import Summary from "./components/Summary";
 import theme from "./lib/theme";
+import useDesktop from "./lib/hooks/useDesktop";
 
 const App = () => {
+	const desktop = useDesktop();
+
 	return (
 		<MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
 			<ModalsProvider
@@ -25,15 +27,14 @@ const App = () => {
 			>
 				<Notifications />
 				<AppShell header={<Header />} footer={<Footer />}>
-					<Container size="xs" p="xs" mx="auto">
-						<Stack spacing="lg">
+					<Container size={desktop ? "lg" : "sm"}>
+						<Stack spacing="lg" py={desktop ? "lg" : undefined}>
 							<Summary />
 							<Divider />
-							<UserForm />
-							<Divider />
-							<TimesForm />
-							<Divider />
-							<DrinksForm />
+							<Group position="center" align="center" spacing={64} grow>
+								<Forms />
+								{desktop && <Results />}
+							</Group>
 						</Stack>
 					</Container>
 				</AppShell>

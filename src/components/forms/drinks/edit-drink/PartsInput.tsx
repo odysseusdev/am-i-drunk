@@ -1,7 +1,7 @@
 import { ActionIcon, Center, Group, NumberInput, Select, Text } from "@mantine/core";
 import { IconCornerDownRight, IconTrash } from "@tabler/icons-react";
 
-import { FormValues } from "./EditDrinkModal";
+import { FormValues } from ".";
 import { UseFormReturnType } from "@mantine/form";
 
 interface Props {

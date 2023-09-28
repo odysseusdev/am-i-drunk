@@ -1,7 +1,7 @@
 export interface Drink {
 	id: string;
 	name: string;
-	parts: DrinkPart[];
+	parts: Array<DrinkPart>;
 	quantity: number;
 }
 
