@@ -5,7 +5,7 @@ import { isSameDay, isToday, isTomorrow, isYesterday } from "date-fns";
 import useStore from "../../../lib/stores/store";
 
 const TimesForm = () => {
-	const [times, setTimes] = useStore((state) => [state.times, state.setTimes]);
+	const [times, setTimes] = useStore((state) => [state.getUser().times, state.setTimes]);
 
 	const { origin, now } = times;
 

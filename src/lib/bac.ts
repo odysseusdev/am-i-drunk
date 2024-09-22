@@ -15,27 +15,12 @@
  * r = ratio of body water to total weight. It varies between individuals but averages about 0.68 for men and 0.55 for women, since women tend to have a higher percentage of fat.
  */
 
-import { Drink } from "./types";
+import { BACResult, Drink } from "./types";
+
 import { GRAMS_PER_STANDARD } from "./conversion";
 import { differenceInSeconds } from "date-fns";
 import { getStandards } from "./drink";
 import { round } from "./util";
-
-export interface BACResult {
-	bac: number;
-	standards: {
-		consumed: number;
-		remaining: number;
-	};
-	times: {
-		origin: Date;
-		now: Date;
-	};
-	timeUntil: {
-		driving: number;
-		sober: number;
-	};
-}
 
 const R = {
 	male: 0.68,

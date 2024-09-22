@@ -3,18 +3,18 @@ import { openConfirmModal, openModal } from "@mantine/modals";
 
 import { Drink } from "../../../lib/types";
 import DrinksItem from "./DrinksItem";
-import EditDrinkModal from "./edit-drink/EditDrinkModal";
+import EditDrinkModal from "./edit-drink";
 import { IconPlus } from "@tabler/icons-react";
 import useStore from "../../../lib/stores/store";
 
 const DrinksForm = () => {
-	const [drinks, removeDrink] = useStore((state) => [state.drinks, state.removeDrink]);
+	const [drinks, removeDrink] = useStore((state) => [state.getUser().drinks, state.removeDrink]);
 
 	const handleEditDrink = (drink?: Drink) => {
 		openModal({
 			title: (
 				<Text fw={600} size="lg">
-					Edit Drink Details
+					Drink Details
 				</Text>
 			),
 			children: <EditDrinkModal drink={drink} />,
