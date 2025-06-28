@@ -5,7 +5,7 @@ import { isSameDay, isToday, isTomorrow, isYesterday } from "date-fns";
 import useStore from "../../../lib/stores/store";
 
 const TimesForm = () => {
-	const [times, setTimes] = useStore((state) => [state.getUser().times, state.setTimes]);
+	const [times, setTimes] = useStore(state => [state.getUser().times, state.setTimes]);
 
 	const { origin, now } = times;
 
@@ -23,10 +23,21 @@ const TimesForm = () => {
 
 	return (
 		<>
-			<Text fw={600} transform="uppercase" ta="center" size="sm" variant="gradient">
+			<Text
+				fw={600}
+				transform="uppercase"
+				ta="center"
+				size="sm"
+				variant="gradient"
+			>
 				2. Current Session
 			</Text>
-			<Text px="sm" ta="center" size="xs" color="dimmed">
+			<Text
+				px="sm"
+				ta="center"
+				size="xs"
+				color="dimmed"
+			>
 				Drinks consumed over a shorter period of time result in less time for your body to process the alcohol.
 			</Text>
 			<Group grow>
@@ -35,12 +46,18 @@ const TimesForm = () => {
 					value={origin}
 					valueFormat={valueFormat(origin)}
 					onChange={(value: DateValue) => setTimes({ ...times, origin: value as Date })}
+					onPointerEnterCapture={undefined}
+					onPointerLeaveCapture={undefined}
+					placeholder={undefined}
 				/>
 				<DateTimePicker
 					label="To"
 					value={now}
 					valueFormat={valueFormat(now)}
 					onChange={(value: DateValue) => setTimes({ ...times, now: value as Date })}
+					onPointerEnterCapture={undefined}
+					onPointerLeaveCapture={undefined}
+					placeholder={undefined}
 				/>
 			</Group>
 		</>
